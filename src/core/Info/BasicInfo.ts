@@ -1,6 +1,6 @@
 import { YTDL_GetInfoOptions } from '@/types/Options';
 import { YT_StreamingAdaptiveFormat } from '@/types/youtube';
-import { YTDL_VideoDetailsAdditions, YTDL_VideoInfo } from '@/types/Ytdl';
+import { YTDL_VideoDetailsAdditions, YTDL_VideoInfo } from '@/types/ytdl';
 
 import { Cache } from '@/core/Cache';
 import PoToken from '@/core/PoToken';
