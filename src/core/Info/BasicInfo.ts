@@ -65,7 +65,7 @@ async function _getBasicInfo(id: string, options: YTDL_GetInfoOptions, isFromGet
 
     const HTML5_PLAYER_PROMISE = getHtml5Player(id, options);
 
-    if (options.oauth2 && options.oauth2.shouldRefreshToken()) {
+    if (options.oauth2 && typeof options.oauth2.shouldRefreshToken === 'function' && options.oauth2.shouldRefreshToken()) {
         Logger.info('The specified OAuth2 token has expired and will be renewed automatically.');
         await options.oauth2.refreshAccessToken();
     }
