@@ -4,8 +4,8 @@ import type { OAuth2 } from '@/core/OAuth2';
 
 import type { YTDL_ClientTypes } from '@/meta/Clients';
 
-import { YTDL_Agent } from './Agent';
-import { YTDL_VideoFormat } from './Ytdl';
+import { YTDL_Agent } from './agent';
+import { YTDL_VideoFormat } from './ytdl';
 import { YTDL_Hreflang } from './Language';
 
 export type YTDL_Filter = 'audioandvideo' | 'videoandaudio' | 'video' | 'videoonly' | 'audio' | 'audioonly' | ((format: YTDL_VideoFormat) => boolean);
@@ -46,6 +46,9 @@ export type YTDL_OAuth2Credentials = {
 export type YTDL_GetInfoOptions = {
     /** You can specify the language to be set when making a request to the API. */
     lang?: YTDL_Hreflang;
+
+    /** You can specify if you want to disable file cache. */
+    disableFileCache?: boolean
 
     /** You can specify the request options. */
     requestOptions?: Parameters<typeof request>[1];
